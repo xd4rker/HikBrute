@@ -53,7 +53,7 @@ for i in range(len(lines)):
 		#location = resp[0]['content-location']
 		content = resp[1]
 		checksum = hashlib.md5(content).hexdigest()
-		if ("a559ac794b5224cee24996c589ea293d" != checksum) & ("64291e186bb8db6585ae01193957964f" != checksum):
+		if (checksum != "a559ac794b5224cee24996c589ea293d") & (checksum != "64291e186bb8db6585ae01193957964f"):
 			print HEADER + BLUE + INFO + ENDLINE + " " + link + " - " + checksum
 			#v.write(link+"\n");
 			hostCount += 1;
