@@ -62,7 +62,7 @@ NullRedirect = "eb503a81d7f04f9b4537d0bd67b5c9db"
 wordlist_path = sys.argv[1]
 f = open(wordlist_path)
 lines = f.readlines()
-v = open("liveHosts.list", "a");
+f.close()
 
 h = httplib2.Http(timeout=100)
 
@@ -91,5 +91,5 @@ for i in range(len(lines)):
 	except KeyboardInterrupt:
 		print "\n" + HEADER + GREEN + ERROR + ENDLINE + " You pressed Ctrl+C ! Aborting ...\n";
 		sys.exit()
-v.close();
+
 print "\n" + HEADER + GREEN + INFO + ENDLINE + " " + str(hostCount) + " total Hosts were found\n";
