@@ -53,6 +53,7 @@ BLUE = "\033[94m"
 GREEN = "\033[92m"
 ENDLINE = "\033[0m"
 INFO = "[+]"
+ERROR = "[-]"
 hostCount = 0;
 
 NotRegistered = "75df0ef069c0dd3f0ccde6e4d7eabe87"
@@ -80,10 +81,15 @@ for i in range(len(lines)):
 			Addr = GetIP(content)
 			Location = GetLocation(Addr)
 
-			print HEADER + BLUE + INFO + ENDLINE + " " + link + " \t->\t" + Addr + "\t" + Location[0] + " - " + Location[1]
-			hostCount += 1;
+			if len(sys.argv) == 3:
+				if sys.argv[2] == Location[0]:
+					print HEADER + BLUE + INFO + ENDLINE + " " + link + " \t->\t" + Addr + "\t" + Location[0] + " - " + Location[1]
+					hostCount += 1;
+			else:
+				print HEADER + BLUE + INFO + ENDLINE + " " + link + " \t->\t" + Addr + "\t" + Location[0] + " - " + Location[1]
 
-	except:
-		pass
+	except KeyboardInterrupt:
+		print "\n" + HEADER + GREEN + ERROR + ENDLINE + " You pressed Ctrl+C ! Aborting ...\n";
+		sys.exit()
 v.close();
 print "\n" + HEADER + GREEN + INFO + ENDLINE + " " + str(hostCount) + " total Hosts were found\n";
