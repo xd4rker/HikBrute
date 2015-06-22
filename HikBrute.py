@@ -86,7 +86,8 @@ for i in range(len(lines)):
 					hostCount += 1;
 			else:
 				print HEADER + BLUE + INFO + ENDLINE + " " + link + " \t->\t" + Addr + "\t" + Location[0] + " - " + Location[1]
-
+				hostCount += 1;
+				
 	except KeyboardInterrupt:
 		print "\n" + HEADER + GREEN + ERROR + ENDLINE + " You pressed Ctrl+C ! Aborting ...\n";
 		sys.exit()
