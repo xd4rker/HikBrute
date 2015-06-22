@@ -21,7 +21,7 @@
 import httplib2, sys, os.path, signal, hashlib, json, re
 
 if len(sys.argv) == 1:
-	print "Error: Usage: ./script.py <WORDLIST_PATH>"
+	print "\nUsage: ./script.py {WORDLIST_PATH} {COUNTRY_CODE}\n"
 	sys.exit()
 
 if not os.path.isfile(sys.argv[1]):
@@ -58,7 +58,6 @@ hostCount = 0;
 
 NotRegistered = "75df0ef069c0dd3f0ccde6e4d7eabe87"
 NullRedirect = "eb503a81d7f04f9b4537d0bd67b5c9db"
-
 
 wordlist_path = sys.argv[1]
 f = open(wordlist_path)
