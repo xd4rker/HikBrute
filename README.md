@@ -10,4 +10,4 @@ Usage
 Screenshots
 ===
 
-![01](http://i.imgur.com/dNTDf7T.png)
+![01](http://i.imgur.com/GbCD8To.png)
