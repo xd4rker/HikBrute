@@ -35,6 +35,9 @@ ENDLINE = "\033[0m"
 INFO = "[+]"
 hostCount = 0;
 
+NotRegistered = "75df0ef069c0dd3f0ccde6e4d7eabe87"
+NullRedirect = "eb503a81d7f04f9b4537d0bd67b5c9db"
+
 wordlist_path = sys.argv[1]
 f = open(wordlist_path)
 lines = f.readlines()
@@ -53,7 +56,7 @@ for i in range(len(lines)):
 		#location = resp[0]['content-location']
 		content = resp[1]
 		checksum = hashlib.md5(content).hexdigest()
-		if (checksum != "a559ac794b5224cee24996c589ea293d") & (checksum != "64291e186bb8db6585ae01193957964f"):
+		if (checksum != NotRegistered) & (checksum != NullRedirect):
 			print HEADER + BLUE + INFO + ENDLINE + " " + link
 			#v.write(link+"\n");
 			hostCount += 1;
